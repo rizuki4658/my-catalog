@@ -4,7 +4,9 @@
       <Navigation />
     </div>
     <div id="content">
-      <Nuxt />
+      <div class="content-container">
+        <Nuxt />
+      </div>
     </div>
     <div id="footer">
       <Footer />

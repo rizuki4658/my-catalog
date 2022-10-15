@@ -1,5 +1,8 @@
 <template>
-  <div class="test-class-scss">content</div>
+  <div>
+    <Banners />
+    <Slider />
+  </div>
 </template>
 
 <script lang="ts">

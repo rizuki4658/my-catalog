@@ -1,0 +1,41 @@
+.banners {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background-color: #cdcdcd;
+
+  .banner {
+    position: absolute;
+    width: 100%;
+    height: 160px;
+    top: 0;
+    left: 100%;
+    &.active {
+      left: 0;
+      transition: all 0.3s ease-out;
+    }
+    .banner-img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 540px) {
+  .banners {
+    height: 280px !important;
+    .banner {
+      height: 280px !important;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .banners {
+    height: 480px !important;
+    .banner {
+      height: 480px !important;
+    }
+  }
+}

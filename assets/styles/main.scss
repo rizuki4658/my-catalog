@@ -27,5 +27,29 @@ ul {
   }
 }
 
+h1 {
+  color: #7e7e7e;
+  font-weight: normal;
+  font-size: 2rem;
+  &:hover {
+    color: inherit;
+  }
+}
+h2 {
+  color: #7e7e7e;
+  font-weight: normal;
+  font-size: 1.5rem;
+  &:hover {
+    color: inherit;
+  }
+}
+
+.bold {
+  font-weight: 600;
+}
+
 @import './navigation.scss';
 @import './footer.scss';
+@import './content.scss';
+@import './slider.scss';
+@import './banners.scss';
