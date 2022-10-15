@@ -21,7 +21,9 @@
       </div>
       <div class="footer-menu-right">
         <NuxtLink v-for="(media, n) in socials" :key="n" :to="media.link">
-          <button>A</button>
+          <button>
+            <Component :is="`Icons${media.icon}`" />
+          </button>
         </NuxtLink>
       </div>
     </div>
