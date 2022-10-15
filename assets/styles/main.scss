@@ -1,4 +1,30 @@
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
+
+#header {
+  height: 64px;
+  position: relative;
+}
+
+ul {
+  display: block;
+  li {
+    display: inline-block;
+  }
+}
+
+@import './navigation.scss';

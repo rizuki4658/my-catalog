@@ -15,7 +15,13 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@nuxt/types", "@types/node"]
+    "types": [
+      "@types/node",
+      "@nuxt/types",
+      "@nuxtjs/axios",
+      "@nuxtjs/composition-api",
+      "@vue/composition-api"
+    ]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]
 }
