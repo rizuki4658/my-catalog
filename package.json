@@ -14,9 +14,9 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-		"src/**": "pretty-quick --staged",
-		"src/**/*.{ts,js}": "eslint",
-		"src/**/*.{sass,scss}": "stylelint"
+    "src/**": "pretty-quick --staged",
+    "src/**/*.{ts,js}": "eslint",
+    "src/**/*.{sass,scss}": "stylelint"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
