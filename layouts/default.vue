@@ -6,7 +6,9 @@
     <div id="content">
       <Nuxt />
     </div>
-    <div id="footer">footer</div>
+    <div id="footer">
+      <Footer />
+    </div>
   </div>
 </template>
 <script lang="ts">

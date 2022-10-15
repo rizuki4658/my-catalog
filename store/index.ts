@@ -1,8 +1,14 @@
 import { ActionTree, MutationTree, GetterTree } from 'vuex'
-import { menu as Menu } from '@/constant'
+import {
+  menu as Menu,
+  footer as Footer,
+  socialMedia as Socials,
+} from '~/constant'
 
 export const state = () => ({
   menu: Menu,
+  footers: Footer,
+  socials: Socials,
 })
 
 export type RootState = ReturnType<typeof state>
@@ -22,4 +28,6 @@ export const actions: ActionTree<RootState, RootState> = {
 
 export const getters: GetterTree<RootState, RootState> = {
   menu: (state) => state.menu,
+  footers: (state) => state.footers,
+  socials: (state) => state.socials,
 }
