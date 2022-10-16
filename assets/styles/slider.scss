@@ -1,5 +1,43 @@
 .slider {
   margin-top: 4rem;
+
+  &.slider-gallery {
+    margin-top: 0;
+  }
+
+  .slider-image {
+    margin-bottom: 1rem;
+    background-color: white;
+    padding: 0.5rem;
+
+    .slider-image-active {
+      height: 320px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-position: 50% 50%;
+      position: relative;
+      overflow: hidden;
+      img {
+        width: auto;
+        height: auto;
+        cursor: zoom-in;
+      }
+
+      &.slider-image-active--zoom {
+        img {
+          transition: opacity 0.3s;
+          display: block;
+          width: 100%;
+          height: 100%;
+
+          &:hover {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
 }
 .slider-title {
   display: flex;
@@ -114,6 +152,63 @@
       margin-top: 0.5rem;
     }
   }
+
+  &.slider-list--gallery {
+    position: relative;
+    overflow: visible;
+
+    .button-gallery-next,
+    .button-gallery-prev {
+      position: absolute;
+      top: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: black;
+      color: white;
+      opacity: 0.3;
+      border-radius: 50px;
+      outline: none;
+      transform: translateY(-50%);
+      cursor: pointer;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+    .button-gallery-prev {
+      left: 0;
+    }
+    .button-gallery-next {
+      right: 0;
+    }
+    .slider-list-track {
+      .slider-list-item {
+        width: 120px;
+        height: 120px;
+        max-width: 120px;
+        max-height: 120px;
+        margin: 0 0.5rem;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        button {
+          display: block;
+          width: 100%;
+          height: 100%;
+          border-radius: 0.25rem;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          cursor: pointer;
+
+          img {
+            width: 100%;
+            border-radius: inherit;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 540px) {
@@ -151,6 +246,17 @@
     }
   }
 }
+
+@media (min-width: 640px) {
+  .slider {
+    .slider-image {
+      .slider-image-active {
+        height: 480px;
+      }
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .slider-list {
     .slider-list-item {
@@ -170,6 +276,24 @@
           width: 2.5rem;
           height: 2.5rem;
         }
+      }
+    }
+  }
+
+  .slider {
+    .slider-image {
+      .slider-image-active {
+        height: 480px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider {
+    .slider-image {
+      .slider-image-active {
+        height: 540px;
       }
     }
   }

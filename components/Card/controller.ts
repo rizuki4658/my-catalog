@@ -7,5 +7,9 @@ export default Vue.extend({
       type: Boolean,
       default: false,
     },
+    autoImage: {
+      type: Boolean,
+      default: false,
+    },
   },
 })

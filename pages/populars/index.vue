@@ -5,7 +5,7 @@
     </div>
     <div class="catalog-body">
       <div v-for="n in 24" :key="n">
-        <NuxtLink :to="`/detail/${n}`">
+        <NuxtLink :to="`/detail/product_${n}`">
           <Card block>
             <!-- <template #image>
               <img :alt="`image-${n}`"/>

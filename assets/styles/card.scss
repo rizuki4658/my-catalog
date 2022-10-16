@@ -3,12 +3,14 @@
   border-radius: 0.5rem;
   border: 1px solid #e5e5e5;
   display: inline-block;
+  background-color: #ffffff;
 
   &.card-block {
     display: block;
   }
 
-  .card-img {
+  .card-img,
+  .card-img-auto {
     height: 300px;
     margin-bottom: 0.5rem;
     img {
@@ -16,6 +18,10 @@
       width: 100%;
       border-radius: 0.5rem;
     }
+  }
+  .card-img-auto {
+    height: auto;
+    max-height: 300px;
   }
   .card-title {
     color: rgba(0, 0, 0, 0.9);

@@ -3,12 +3,14 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'Detail',
   asyncData(context) {
-    if (!context.params.id) context.redirect('/populars')
+    if (!context.params.slug) context.redirect('/populars')
   },
   data() {
     return {
       detail: {},
-      id: this.$route.params.id,
+      slug: this.$route.params.slug,
+      language: undefined,
+      size: undefined,
     }
   },
 })
