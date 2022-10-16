@@ -11,6 +11,9 @@
     <div id="footer">
       <Footer />
     </div>
+    <Transition name="fade">
+      <Loading v-if="loading" />
+    </Transition>
   </div>
 </template>
 <script lang="ts">
@@ -18,6 +21,11 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Layout',
+  computed: {
+    loading() {
+      return this.$store.getters.loading
+    },
+  },
   mounted() {
     const key = this.$store.state.menu.findIndex(
       (item: { name: string; link: string; active: boolean }) =>

@@ -1,40 +1,45 @@
 <template>
   <div class="detail">
     <div class="detail-image">
-      <SliderGallery />
+      <SliderGallery :items="detail.images" :active="detail.thumbnail" />
     </div>
     <div class="detail-product">
       <div class="detail-product-title">
-        <h1>Product 1</h1>
+        <h1>{{ detail.title }}</h1>
         <NuxtLink to="/">
-          <span>category's 1</span>
+          <span>{{ detail.category }}</span>
         </NuxtLink>
       </div>
-      <div class="detail-product-price">Rp. 1.000.000</div>
+      <div class="detail-product-price">$. {{ detail.price }}.00</div>
       <div class="detail-product-color">
         <div class="label">Select Colors</div>
-        <Radio v-model="language" option="HTML">
+        <Radio
+          v-for="(color, keyColor) in detail.color"
+          :key="keyColor"
+          v-model="colors"
+          :option="color"
+        >
           <div class="detail-product-color--option">
-            <div class="color" style="background-color: red" />
-          </div>
-        </Radio>
-        <Radio v-model="language" option="HTML">
-          <div class="detail-product-color--option">
-            <div class="color" style="background-color: green" />
-          </div>
-        </Radio>
-        <Radio v-model="language" option="HTML">
-          <div class="detail-product-color--option">
-            <div class="color" style="background-color: blue" />
+            <div
+              class="color"
+              :style="{
+                backgroundColor: color.color,
+              }"
+            />
           </div>
         </Radio>
       </div>
       <div class="detail-product-size">
         <div class="label">Select Size</div>
         <div class="columns">
-          <Radio v-for="n in 10" :key="n" v-model="size" :option="`Size ${n}`">
+          <Radio
+            v-for="(sizeproduct, keySize) in detail.color"
+            :key="keySize"
+            v-model="size"
+            :option="sizeproduct"
+          >
             <div class="detail-product-size--option">
-              {{ `Size ${n}` }}
+              {{ sizeproduct.name }}
             </div>
           </Radio>
         </div>
@@ -49,12 +54,7 @@
       </div>
       <div class="detail-product-desc">
         <p>
-          Join the party and celebrate 40 years of pushing sport and fashion
-          boundaries with the Air Force 1 React. Taking a bold step into b-ball
-          iconography, its plush React foam and amplified outsole bring new-age
-          comfort. Polished gold details and fresh branding that blends logos
-          from past releases honour the fearless off-court look and pay tribute
-          to the AF-1's reign.
+          {{ detail.description }}
         </p>
       </div>
     </div>

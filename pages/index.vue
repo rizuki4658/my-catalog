@@ -1,7 +1,8 @@
 <template>
   <div>
     <Banners />
-    <Slider />
+
+    <Slider :items="items" />
   </div>
 </template>
 
@@ -10,5 +11,16 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'IndexPage',
+  // @ts-ignore
+  async asyncData({ $api, store }) {
+    store.dispatch('setLoading', true)
+    const items = await $api.request.getPopulars()
+    store.dispatch('setPopulars', items)
+    store.dispatch('setLoading', false)
+
+    return {
+      items,
+    }
+  },
 })
 </script>

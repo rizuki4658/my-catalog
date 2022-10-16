@@ -2,12 +2,38 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'SliderGallery',
+  props: {
+    items: {
+      type: Array,
+      default: () => [],
+    },
+    active: {
+      type: String,
+      default: undefined,
+    },
+  },
   data() {
     return {
       showButton: true,
       el: null,
       zoomed: false,
+      images: [],
+      activeImage: undefined,
     }
+  },
+  watch: {
+    items: {
+      handler(val) {
+        if (val) {
+          this.images = val
+          this.activeImage = val[0]
+        } else {
+          this.images = []
+          this.activeImage = undefined
+        }
+      },
+      immediate: true,
+    },
   },
   mounted() {
     window.addEventListener('resize', this.handleShowingButton)
@@ -19,7 +45,7 @@ export default Vue.extend({
   methods: {
     handleShowingButton() {
       const el: HTMLElement = this.$refs.sliderTrackGallery as HTMLElement
-      if (el.scrollWidth === 0) this.showButton = false
+      if (el.scrollWidth <= el.offsetWidth) this.showButton = false
       else this.showButton = true
     },
     nextSlide() {
@@ -46,6 +72,9 @@ export default Vue.extend({
       const x = (offsetX / zoomer.offsetWidth) * 100
       const y = (offsetY / zoomer.offsetHeight) * 100
       zoomer.style.backgroundPosition = x + '% ' + y + '%'
+    },
+    handleSelectedImage(key: number) {
+      this.activeImage = this.images[key]
     },
   },
 })

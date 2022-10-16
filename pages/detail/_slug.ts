@@ -2,14 +2,24 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Detail',
-  asyncData(context) {
-    if (!context.params.slug) context.redirect('/populars')
+  async asyncData({ route, $api, store, redirect }) {
+    const { slug } = route.params
+    let detail = {}
+    if (slug) {
+      store.dispatch('setLoading', true)
+      detail = await $api.request.getDetails(route.params.slug)
+      store.dispatch('setLoading', false)
+    } else redirect('/populars')
+
+    return {
+      detail,
+    }
   },
   data() {
     return {
       detail: {},
       slug: this.$route.params.slug,
-      language: undefined,
+      colors: undefined,
       size: undefined,
     }
   },
