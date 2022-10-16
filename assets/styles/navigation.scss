@@ -126,6 +126,26 @@
       }
     }
   }
+
+  .navigation-container-mobile {
+    .navigation-menu--list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+
+      .navigation-menu--list_item {
+        a {
+          color: #a3a3a3;
+          text-transform: uppercase;
+          font-weight: 550;
+          font-size: 0.9rem;
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {
@@ -154,5 +174,8 @@
         display: block !important;
       }
     }
+  }
+  .navigation-container-mobile {
+    display: none !important;
   }
 }

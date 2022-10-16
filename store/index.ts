@@ -15,7 +15,12 @@ export type RootState = ReturnType<typeof state>
 
 export const mutations: MutationTree<RootState> = {
   SET_MENU: (state, payload) => {
-    state.menu = payload
+    const menus = state.menu.map((item: any) => {
+      item.active = false
+      return item
+    })
+    if (menus[payload]) menus[payload].active = true
+    state.menu = menus
   },
 }
 

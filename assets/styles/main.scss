@@ -66,6 +66,21 @@ button {
   background-color: inherit;
   border: 0;
 }
+.w-full {
+  width: 100%;
+}
+.rounded-full {
+  border-radius: 50px !important;
+}
+.show-on-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .show-on-mobile {
+    display: none !important;
+  }
+}
 
 @import './navigation.scss';
 @import './footer.scss';
@@ -76,3 +91,5 @@ button {
 @import './catalog.scss';
 @import './input.scss';
 @import './pages/detail.scss';
+@import './modal.scss';
+@import './transition.scss';
