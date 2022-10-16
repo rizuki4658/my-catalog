@@ -6,7 +6,7 @@ type Menu = {
 
 export const menu: Menu[] = [
   {
-    link: '/',
+    link: '/populars',
     name: 'Populers',
     active: false,
   },

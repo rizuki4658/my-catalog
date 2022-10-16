@@ -48,8 +48,18 @@ h2 {
   font-weight: 600;
 }
 
+a {
+  text-decoration: none;
+  color: #7e7e7e;
+  &:visited {
+    color: inherit;
+  }
+}
+
 @import './navigation.scss';
 @import './footer.scss';
 @import './content.scss';
 @import './slider.scss';
 @import './banners.scss';
+@import './card.scss';
+@import './catalog.scss';

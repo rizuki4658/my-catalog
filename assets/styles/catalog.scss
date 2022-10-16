@@ -1,0 +1,46 @@
+.catalog {
+  .catalog-header {
+    h1 {
+      font-size: 1.8rem;
+      &.hover {
+        .catalog-count {
+          color: #7e7e7e;
+        }
+      }
+    }
+    .catalog-count {
+      font-size: 1rem;
+    }
+  }
+
+  .catalog-body {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1rem 1rem;
+  }
+}
+
+@media (min-width: 480px) {
+  .catalog {
+    .catalog-body {
+      grid-template-columns: auto auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    .catalog-body {
+      grid-template-columns: auto auto auto;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    .catalog-body {
+      grid-template-columns: auto auto auto auto;
+    }
+  }
+}

@@ -13,14 +13,18 @@
     <div class="slider-list">
       <div ref="sliderTrack" class="slider-list-track">
         <div v-for="n in 24" :key="n" class="slider-list-item">
-          <div class="slider-list-item--img">A</div>
-          <div class="slider-list-item--desc">
-            <h2 class="slider-list-item--desc_name">Item Name {{ n }}</h2>
-            <span class="slider-list-item--desc_price">
-              Rp. {{ n }}.000.000
-            </span>
-          </div>
-          <div class="slider-list-item--category">Category {{ n }}</div>
+          <NuxtLink :to="`/detail/${n}`">
+            <Card>
+              <!-- <template #image>
+                <img :alt="`image-${n}`"/>
+              </template> -->
+              <template #title>
+                <div>Item name {{ n }}</div>
+                <div>Rp. {{ n }}.000.000</div>
+              </template>
+              <template #desc> Category {{ n }} </template>
+            </Card>
+          </NuxtLink>
         </div>
       </div>
     </div>
